@@ -7,8 +7,9 @@
   <LINK href="styles.css" rel="stylesheet" type="text/css">
     
     <style>
-      
-      @import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap");
+
+
+@import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;300;400;500;600;700&display=swap");
 
 * {
@@ -76,8 +77,8 @@ label {
   font-family: "Readex Pro", sans-serif;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 19px;
+  font-size: 16px
+  line-height: 20px;
   color: #443968;
 }
 
@@ -85,8 +86,8 @@ label {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
-  line-height: 15px;
+  font-size: 12px;
+  line-height: 12px;
   color: #758897;
 }
 
@@ -116,17 +117,15 @@ label {
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 12px;
-  margin-top: 4px;
-  margin-bottom: 4px;
   color: #758897;
 }
 
-#website a {
+.website a {
   font-style: normal;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 15px;
   font-family: "Inter";
   text-decoration: none;
@@ -137,10 +136,12 @@ label {
   font-family: "Inter";
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 10px;
   line-height: 150%;
   color: #a0b1be;
 }
+
+
 
 
 
@@ -181,15 +182,26 @@ label {
         <tbody>
           <tr>
             <td>
-              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAT6SURBVHgB7ZxfTFtlFMDPd0HFUSOZD2MJJsRtPA40PgDLTJnIwzBRMc4X06F7sEt8wD8zmpGACVMTMJOELNVkKsyXGQc86AzqZp3KSDSM+ia0C4tLZA8aEkGXCP0859J7ub1/ylnpmi09v+TS23u/tt/3u+c732lDroIchBujtVAqVFQsxuPvLwadVu4DrY3RMB7tAdANeLoKSgil1Mwq6MHzk7FPPOecT1qbDh9HQV1Q4miA+VUNLfGp2Lx1zBb1WHP0Y62hE4QMelGtlLV88/OJGXpm0J/W5miPSHKjqtLl6bFwuMtMP4aZsDX0guABp1tt+fXrZioyMKTCIASiFRykR0MZ8CQIgVBU0awzlIZ7QcjJHatGlQHChuiytIjiIqKYiCgmIoqJiGIiopiIKCYiiomIYiKimIgoJiKKiYhiIqKYiCgmIoqJiGIiopiIKCYiikk53CZs236f+bi89C8s/f0PFBu2qIGhl6H+oTrfc6m5q5CY/g1OfXTWHsSR7oPQtr8x8P0S07Pw9dkp3C4GttmNnxd5oR127qqBynu2ZH3e6OnzWa8lkZ+e6bOf9/eNeN6b+k/jsHj1pePwK/aDQ0EiagcOhLY9jzRAtPNt1hWnTtO2bftWOHXyy6xzIZTS+86LgReGPutIdwQih9rhNRzswh9/ws2moDmKrupTB1o8x5dR3DUcjLU5iRx63IwcJ37RS6+jKFx2XIRQ6G6oxK0Y5BVREzhlBvqGzX2S8x4OzMohHc8+6omQJE4VuvIW1PaD4aP2INv2N9lTgMRRxFgkpueg/9hwlmD6jA68ID1vxMxpWAw2HVE0ABJnEWJcYXpNcvZ3+3l19VZ735nXqF3PmzFPFI6ePgfPPd1dNElEQXLUnr277f0lXJU2gnJQdSYCiVRybcBrOWv9+AhG5nKeKxwJd0/f0CamaV6iGh7cZa8e7hVp8kLC035H3f3mKmhBYp2vsVYn90BSyfWoc69qTkio3wpXSPISRZ12XnkLmiIjJ7/wHCcBQaUCtU/N+k+hytAWuFUoWMHpl3Q3wl3rJF05px4j11nnJBz7OzFKc614P2Fku3NYNZYitHDkQ16iEpfmcGVbjxwaYK5cQgOkVc9d8FGUOUWR5MuY5B9ACQStbpM/JMyIo3PWykn5jd7HEpW45C0aKQX4Tcd8ReW16i1kahpr4yZcajuGFbUFddxdQ5357Dt7n6bswNArcLjrGZRXY053at/7btSe+iSQW11vhqJ/16Oc1NbeZEfD60cjWdU8RQFNOWpDkKyOA/vMzY8Tg59DMSj6rwdUPow6osqvmu8/NuIpWt1YU3HywgwUA3ZEXVv4y07UnKm2lPnaYu67aiuKqua99VhPrUUVfUccwynn/I5IbSbM6KrD8/V2BFI/UpjHJr6a8vTDuZD49ZH6cSOLjRPV2hSlpBAGIRgNLfLDHRMRxUREMRFRTEQUExHFREQxEVFMRBQTEcVERDERUUxEFBMRxUREMRFRTEQUExHFREQxEVFMRBQDtWosGlrDFRBy8l/lnfMGqPQ4CMFoiNO974xzFz8cp1uVgeBL2gDzfzDNHKU0PA+CF4wm68aApqhvp2JxPPgWCDZaQWIF1gOozNq5fPWXeG3Nw1dAQYMCKKnbSrrB8Q+u3FXRGf9xaMFxzMu+xminofQTGHC1SuuSkJbJ099jKTBu3SnRyf+8QOlmlRiAbQAAAABJRU5ErkJggg==" alt="Red dot" />
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEoAAABKCAYAAAAc0MJxAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAT6SURBVHgB7ZxfTFtlFMDPd0HFUSOZD2MJJsRtPA40PgDLTJnIwzBRMc4X06F7sEt8wD8zmpGACVMTMJOELNVkKsyXGQc86AzqZp3KSDSM+ia0C4tLZA8aEkGXCP0859J7ub1/ylnpmi09v+TS23u/tt/3u+c732lDroIchBujtVAqVFQsxuPvLwadVu4DrY3RMB7tAdANeLoKSgil1Mwq6MHzk7FPPOecT1qbDh9HQV1Q4miA+VUNLfGp2Lx1zBb1WHP0Y62hE4QMelGtlLV88/OJGXpm0J/W5miPSHKjqtLl6bFwuMtMP4aZsDX0guABp1tt+fXrZioyMKTCIASiFRykR0MZ8CQIgVBU0awzlIZ7QcjJHatGlQHChuiytIjiIqKYiCgmIoqJiGIiopiIKCYiiomIYiKimIgoJiKKiYhiIqKYiCgmIoqJiGIiopiIKCYiikk53CZs236f+bi89C8s/f0PFBu2qIGhl6H+oTrfc6m5q5CY/g1OfXTWHsSR7oPQtr8x8P0S07Pw9dkp3C4GttmNnxd5oR127qqBynu2ZH3e6OnzWa8lkZ+e6bOf9/eNeN6b+k/jsHj1pePwK/aDQ0EiagcOhLY9jzRAtPNt1hWnTtO2bftWOHXyy6xzIZTS+86LgReGPutIdwQih9rhNRzswh9/ws2moDmKrupTB1o8x5dR3DUcjLU5iRx63IwcJ37RS6+jKFx2XIRQ6G6oxK0Y5BVREzhlBvqGzX2S8x4OzMohHc8+6omQJE4VuvIW1PaD4aP2INv2N9lTgMRRxFgkpueg/9hwlmD6jA68ID1vxMxpWAw2HVE0ABJnEWJcYXpNcvZ3+3l19VZ735nXqF3PmzFPFI6ePgfPPd1dNElEQXLUnr277f0lXJU2gnJQdSYCiVRybcBrOWv9+AhG5nKeKxwJd0/f0CamaV6iGh7cZa8e7hVp8kLC035H3f3mKmhBYp2vsVYn90BSyfWoc69qTkio3wpXSPISRZ12XnkLmiIjJ7/wHCcBQaUCtU/N+k+hytAWuFUoWMHpl3Q3wl3rJF05px4j11nnJBz7OzFKc614P2Fku3NYNZYitHDkQ16iEpfmcGVbjxwaYK5cQgOkVc9d8FGUOUWR5MuY5B9ACQStbpM/JMyIo3PWykn5jd7HEpW45C0aKQX4Tcd8ReW16i1kahpr4yZcajuGFbUFddxdQ5357Dt7n6bswNArcLjrGZRXY053at/7btSe+iSQW11vhqJ/16Oc1NbeZEfD60cjWdU8RQFNOWpDkKyOA/vMzY8Tg59DMSj6rwdUPow6osqvmu8/NuIpWt1YU3HywgwUA3ZEXVv4y07UnKm2lPnaYu67aiuKqua99VhPrUUVfUccwynn/I5IbSbM6KrD8/V2BFI/UpjHJr6a8vTDuZD49ZH6cSOLjRPV2hSlpBAGIRgNLfLDHRMRxUREMRFRTEQUExHFREQxEVFMRBQTEcVERDERUUxEFBMRxUREMRFRTEQUExHFREQxEVFMRBQDtWosGlrDFRBy8l/lnfMGqPQ4CMFoiNO974xzFz8cp1uVgeBL2gDzfzDNHKU0PA+CF4wm68aApqhvp2JxPPgWCDZaQWIF1gOozNq5fPWXeG3Nw1dAQYMCKKnbSrrB8Q+u3FXRGf9xaMFxzMu+xminofQTGHC1SuuSkJbJ099jKTBu3SnRyf+8QOlmlRiAbQAAAABJRU5ErkJggg==" width="64px" alt="PRGH" />
 
             </td>
             <td>
               <div id="nameLabel">Name</div>
               <div id="designationLabel">Designation</div>
               <div id="emailLabel"> your.email@prgh-group.com </div>
-              <div id="website"> <a style="text-decoration: none;" target="_bank" href="https://www.prgh.de/"> www.prgh.de</a> &nbsp; <span> <a target="_bank" href="https://www.linkedin.com/company/prgh-de"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAARCAYAAADtyJ2fAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEOSURBVHgB1ZC/asJQFMa/e5EUhEJKttLSTG6lyditFLoV7BvoZHHq0Bdw8AHcxD9DnsA/u2AmHXVwiVOCYqaAoAgKRm+uGMVIiG5+w+W7fOd37zkHuBkRpIsyBJqOTGyIiUpGI8iUNHZN4RLFiEr3Xozf4SPxGA1crUUfrGe/0P7/xo8iR2Jje9PsW5guVuiPnMtA05lBHAvce78qzxIaPQtJ9QUPcQGF1oDXBECvOPWegG7Yvv/7fGWz7x5LvslQ8zXW1ZLfaVg7WtcA+S1DH04gS/dQniQ/CwW9uT1ZzjyQhYJhuhr0l6N1DLaYCd/csT/NAqA+tNlpc78rsHEuO4DUzcGlJqLKxRTVrL4FHwxgvdzdu2sAAAAASUVORK5CYII=
-  "> </a> </span></div>
+              
+              <table>
+                <tbody>
+                  <tr>
+                    <td class="website"><a style="text-decoration: none;" target="_bank" href="https://www.prgh.de/"> www.prgh.de</a></td>
+                  <td><a target="_bank" href="https://www.linkedin.com/company/prgh-de"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAARCAYAAADtyJ2fAAAACXBIWXMAABCcAAAQnAEmzTo0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEOSURBVHgB1ZC/asJQFMa/e5EUhEJKttLSTG6lyditFLoV7BvoZHHq0Bdw8AHcxD9DnsA/u2AmHXVwiVOCYqaAoAgKRm+uGMVIiG5+w+W7fOd37zkHuBkRpIsyBJqOTGyIiUpGI8iUNHZN4RLFiEr3Xozf4SPxGA1crUUfrGe/0P7/xo8iR2Jje9PsW5guVuiPnMtA05lBHAvce78qzxIaPQtJ9QUPcQGF1oDXBECvOPWegG7Yvv/7fGWz7x5LvslQ8zXW1ZLfaVg7WtcA+S1DH04gS/dQniQ/CwW9uT1ZzjyQhYJhuhr0l6N1DLaYCd/csT/NAqA+tNlpc78rsHEuO4DUzcGlJqLKxRTVrL4FHwxgvdzdu2sAAAAASUVORK5CYII=
+  "> </a></td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              
+             </div>
 
             </td>
           </tr>
@@ -210,6 +222,7 @@ label {
 
   </div>
 </div>
+
  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
