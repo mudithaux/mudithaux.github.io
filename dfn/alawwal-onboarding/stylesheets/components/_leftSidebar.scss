@@ -1,0 +1,64 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the card component.
+// -----------------------------------------------------------------------------
+
+.left-sidebar{
+  background-color: #34393D;
+  color: #FFF;
+  position: relative;
+  .sidebar-content{
+    padding-top: 3rem;
+  }
+}
+
+.right-panel{
+  padding-top: 10rem;
+  .panel-content{
+    top: 3rem;
+
+  }
+}
+
+.hint-box{
+  padding: 0 1rem;
+  width: 100%;
+  position: relative;
+  &::before{
+    content: "";
+    width: 0.25rem;
+    height: 100%;
+    position: absolute;
+    display: block;
+    background: linear-gradient(to bottom, #16B19B 0%, #FEC524 100%);
+    left: 0;
+    top: 0;
+  }
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.main-navigation{
+  .nav > li > a:hover,
+  .nav > li > a:focus{
+    background: none;
+  }
+  .nav{
+    .nav-item{
+      .nav-link{
+        
+        font-size: 16px;
+        font-family: 'Neo Sans Pro';
+        padding: 8px 16px;
+        color: #7C7A82;
+        &:hover{
+          color: #FFF;
+        }
+        
+      }
+    }
+  }
+}

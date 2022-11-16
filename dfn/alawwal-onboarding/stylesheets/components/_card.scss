@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the card component.
+// -----------------------------------------------------------------------------
+
+.card-item{
+  border: 1px solid $light-grey;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  height: 100%;
+  &.active{
+    background-color: #EBFDFB;
+    border-color: $color-primary;
+  }
+  .icon-container{
+    background: $color-primary;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: $border-radius-universal;
+    text-align: center;
+    line-height: 2.5rem;
+    .icon{
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 1.5rem;
+    }
+  }
+  p {
+    margin-bottom: 0;
+  }
+}

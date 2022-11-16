@@ -1,0 +1,82 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: $color-primary;
+  text-decoration: none;
+
+  @include on-event {
+    color: $text-color;
+    text-decoration: underline;
+  }
+}
+
+
+.space{
+  width: 100%;
+  display: block;
+  &-01{
+    height: 32px;
+  }
+}
+
+hr{
+  border-top: 1px solid #E7E7ED;
+}
+
+hr.spc-01{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+hr.spc-02{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+hr.spc-03{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bdr-left{
+  border-left: 1px solid #E7E7ED;
+}
+
+.row.data-row{
+  margin-bottom: 0.75rem;
+}
+
+.aw-component{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #E7E7ED;
+}
+
+body{
+  font-size: 16px;
+  font-family: 'Neo Sans Pro';
+}

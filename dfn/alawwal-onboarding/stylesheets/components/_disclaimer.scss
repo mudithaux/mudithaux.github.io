@@ -1,0 +1,14 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the card component.
+// -----------------------------------------------------------------------------
+
+.disclaimer-multilang{
+  border: 1px solid $light-grey;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  height: 600px;
+  overflow-y: auto;
+  p {
+    margin-bottom: 0;
+  }
+}
