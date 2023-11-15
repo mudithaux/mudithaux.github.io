@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Daily Icebreaker</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        background-color: #1f1f1f;
+        text-align: center;
+        font-family: "Figtree", sans-serif;
+        color: #fff;
+      }
+      h1 {
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        color: #747474;
+        font-weight: 500;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #question {
+        max-width: 80%;
+        margin-top: 20px;
+        font-size: 32px;
+        color: #fff;
+        padding: 15px;
+        background-color: #ffffff0a;
+        border: 1px solid #383838;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      button {
+        background-color: #4caf50;
+        background: linear-gradient(120deg, #0cb47f, #0b97fe);
+        background-size: 200% 100%;
+        background-position: 100% 0;
+        transition: background-position 0.5s;
+        color: white;
+        padding: 14px 20px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background 1s ease-in-out;
+      }
+
+      button:hover {
+        background-position: 0 0;
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Daily Icebreaker</h1>
+      <button onclick="displayRandomQuestion()">
+        Uncover a Mystery Question
+      </button>
+      <p id="question">😃</p>
+    </div>
+
+    <script>
+      // Define an array of 50 questions
+      const questions = [
+        "What's one new thing you tried or learned over the weekend?",
+        "If you could have any superpower just for today, what would it be and why?",
+        "What's your go-to productivity hack or tool?",
+        "Share one thing you're looking forward to today.",
+        "What's your current favorite song, book, or movie, and why?",
+        "If you could travel anywhere in the world right now, where would it be?",
+        "What's one skill you wish you could master overnight?",
+        "Which historical figure would you love to have dinner with and why?",
+        "What's one small thing that made you smile recently?",
+        "If you could swap roles with anyone in the company for a day, who would it be and why?",
+        "What was the last thing you googled?",
+        "What's your favorite way to unwind after a busy day?",
+        "Do you have any hidden talents?",
+        "What's the best piece of advice you've ever received?",
+        "If you could only eat one food for the rest of your life, what would it be?",
+        "What's your favorite childhood memory?",
+        "If you could guest star on any TV show, which one would it be?",
+        "What's the most interesting thing about your hometown?",
+        "If you could meet any fictional character, who would it be?",
+        "What's a hobby you've always wanted to pick up but never did?",
+        "What's the most adventurous thing you've ever done?",
+        "If you could live in any era, when would you choose?",
+        "What was your dream job as a child?",
+        "What's one book you think everyone should read?",
+        "If you could learn one new language fluently, which would it be?",
+        "What's your favorite season and why?",
+        "Do you have a favorite quote or motto you live by?",
+        "What's the best movie you've seen recently?",
+        "What's a goal you have for this year?",
+        "If you could have dinner with any person from history, who would it be?",
+        "What's the most unusual food you've ever tried?",
+        "What's your favorite outdoor activity?",
+        "What's the last concert you went to?",
+        "Do you prefer sunrise or sunset?",
+        "What's your favorite type of cuisine?",
+        "What's the most useful app on your phone?",
+        "If you could instantly become an expert in something, what would it be?",
+        "What's the best vacation you've ever had?",
+        "What's one thing you can't live without?",
+        "What's your favorite thing about your current job?",
+        "If you could write a book, what genre would it be?",
+        "What's your favorite sport to watch or play?",
+        "What's the best gift you've ever received?",
+        "What's something you're proud of from this past week?",
+        "If you could teleport anywhere right now, where would you go?",
+        "What's a song that always makes you happy?",
+        "What's your favorite board game or card game?",
+        "What's the best piece of advice you would give to your younger self?",
+        "If you could be any animal for a day, which would you be?",
+        "What's a skill you'd like to improve this year?",
+        "What's your favorite thing to cook or bake?",
+        "Do you have any pet peeves?",
+        "What's something new you'd like to try this year?",
+        "What's the funniest thing that happened to you recently?",
+        "What's your favorite holiday and why?",
+        "If you could start a charity, what would it focus on?",
+        "What's the most interesting documentary you've ever watched?",
+        "What's your favorite podcast?",
+        "If you could have a theme song, what would it be?",
+        "What's your favorite way to spend a day off?",
+        "Do you have a favorite family tradition?",
+        "What's the last book you read?",
+        "What's something you're looking forward to in the next month?",
+        "Do you have a favorite local restaurant or cafe?",
+        "What's the best part of waking up?",
+        "What's your favorite type of weather?",
+        "What's a movie you can watch over and over without getting tired of?",
+        "What's your favorite ice cream flavor?",
+        "Do you have any siblings, and if so, where do you fit in the birth order?",
+        "What's your favorite childhood TV show?",
+        "What's the last thing that made you laugh out loud?",
+        "If you could live in any TV show's world, which one would you choose?",
+      ];
+
+      let remainingQuestions = [...questions];
+
+      function displayRandomQuestion() {
+        if (remainingQuestions.length === 0) {
+          remainingQuestions = [...questions];
+          document.getElementById("question").innerText =
+            "All questions unveiled! Starting anew.";
+          return;
+        }
+
+        const questionElement = document.getElementById("question");
+        questionElement.style.opacity = 0;
+        setTimeout(function () {
+          const randomIndex = Math.floor(
+            Math.random() * remainingQuestions.length
+          );
+          questionElement.innerText = remainingQuestions[randomIndex];
+          remainingQuestions.splice(randomIndex, 1);
+          questionElement.style.opacity = 1;
+        }, 100);
+      }
+    </script>
+  </body>
+</html>
 
