@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Material Design Palette Generator</title>
+    <style>
+      .palette {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .color {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: black;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Material Design Palette Generator</h2>
+    <input type="color" id="baseColor" placeholder="#00a97b" value="#00a97b" />
+    <button onclick="generatePalette()">Generate Palette</button>
+    <div id="palette" class="palette"></div>
+
+    <script>
+      function generatePalette() {
+        const baseColor = document.getElementById("baseColor").value;
+        const paletteContainer = document.getElementById("palette");
+        paletteContainer.innerHTML = ""; // Clear previous palette
+
+        const shades = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+        shades.forEach((shade) => {
+          const color = adjustColor(baseColor, shade);
+          const colorDiv = document.createElement("div");
+          colorDiv.className = "color";
+          colorDiv.style.backgroundColor = color;
+          colorDiv.innerText = shade + ": " + color;
+          paletteContainer.appendChild(colorDiv);
+        });
+      }
+
+      function adjustColor(hex, shade) {
+        let [r, g, b] = hexToRgb(hex);
+        let factor;
+
+        if (shade >= 600) {
+          // Darken for shades 700 to 1000
+          factor = 1 - ((shade - 600) / 400) * 0.75;
+        } else {
+          // Lighten for shades 100 to 500
+          factor = 1 + ((600 - shade) / 500) * 0.75;
+        }
+
+        r = clamp(Math.round(r * factor), 0, 255);
+        g = clamp(Math.round(g * factor), 0, 255);
+        b = clamp(Math.round(b * factor), 0, 255);
+
+        return rgbToHex(r, g, b);
+      }
+
+      function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result
+          ? [
+              parseInt(result[1], 16),
+              parseInt(result[2], 16),
+              parseInt(result[3], 16),
+            ]
+          : null;
+      }
+
+      function rgbToHex(r, g, b) {
+        return (
+          "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1)
+        );
+      }
+
+      function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+      }
+
+      // Initial call to display a default palette
+      generatePalette();
+    </script>
+  
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+  // Select all color elements in the palette
+  const colors = document.querySelectorAll('.color');
+
+  // Function to fetch color name from Color Pizza API
+  function getColorName(hex, element) {
+    fetch(`https://api.color.pizza/v1/${hex}`)
+      .then(response => response.json())
+      .then(data => {
+        // If the color name is found, display it
+        if (data.colors && data.colors.length > 0) {
+          const colorName = data.colors[0].name;
+          element.innerText = `${colorName}
+${hex}`;
+        }
+      })
+      .catch(error => console.error('Error fetching color name:', error));
+  }
+
+  // Iterate over each color element and fetch its name
+  colors.forEach(color => {
+    // Extracting hex code from the background color
+    const hexCode = color.style.backgroundColor.substring(1);
+    getColorName(hexCode, color);
+  });
+});
+</script>
+</body>
+</html>
