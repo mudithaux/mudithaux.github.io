@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ColorMaze</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Color Hex Array Generator</title>
+      </head>
+      <body>
+        <div class="container verticle">
+          <h1>Color System Generator</h1>
+          <div class="input-row">
+            <div class="input-group">
+              <label for="color100">Color 100</label>
+              <div class="input-color-cont">
+                <input
+                  type="text"
+                  id="color100"
+                  placeholder="Color at 100"
+                  value="FAFBFB"
+                />
+                <div class="color-picker-cont outline">
+                  <input
+                    type="color"
+                    id="color100Picker"
+                    class="color-picker"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group">
+              <label for="easeFactor"
+                >Ease Factor <span>(from 100 to 600)</span></label
+              >
+              <input
+                type="number"
+                id="easeFactor"
+                placeholder="Ease Factor"
+                value="2"
+                step="0.1"
+                min="1"
+                max="5"
+              />
+            </div>
+
+            <div class="input-group">
+              <label for="color600">Color 600 <span>(Optional)</span></label>
+              <div class="input-color-cont">
+                <input
+                  type="text"
+                  id="color600"
+                  placeholder="Color at 600"
+                  value="95A1AC"
+                />
+                <div class="color-picker-cont">
+                  <input
+                    type="color"
+                    id="color600Picker"
+                    class="color-picker"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="input-group">
+              <label for="color1000">Color 1000</label>
+              <div class="input-color-cont">
+                <input
+                  type="text"
+                  id="color1000"
+                  placeholder="Color at 1000"
+                  value="3B3F44"
+                />
+                <div class="color-picker-cont">
+                  <input
+                    type="color"
+                    id="color1000Picker"
+                    class="color-picker"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="input-group d-flex pt-xl">
+              <button class="btn btn-primary w-100" id="generate">
+                Generate
+              </button>
+              <div class="btn-seperator"></div>
+              <button class="btn btn-outline w-100" id="copyButton">
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+        <div id="result"></div>
+        <div id="svgResult"></div>
+      </body>
+    </html>
+    <!-- partial -->
+    <script src="./script.js"></script>
+  </body>
+</html>
